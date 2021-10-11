@@ -87,7 +87,7 @@ const initialRender = () => {
     if(sessionStorage.getItem("CurrentGithubUserData")) {
         render(JSON.parse(sessionStorage.getItem("CurrentGithubUserData")))
     } else {
-        handleData(new NullUserObject())
+        render(handleData(new NullUserObject()))
     }
 }
 
