@@ -1,6 +1,6 @@
 const fetchData = (event) => {
     event.preventDefault()
-    document.querySelector("#input-error").style.visibility = "hidden";
+    document.querySelector("#input-error").style.display = "none";
     let username = event.target.elements["username"].value !== "" ?
                    event.target.elements["username"].value  : 
                    "octacat"
@@ -17,9 +17,9 @@ const handleError = (response) => {
     if(!response.ok) {
         initialRender()
         let errorDOMElement = document.querySelector("#input-error")
-        errorDOMElement.style.visibility = "visible";
+        errorDOMElement.style.display = "flex";
         if(response.status === 404) {
-            errorDOMElement.innerText = "No results."
+            errorDOMElement.innerText = "No\xA0results."
             throw "404 Result not found"
         }
         if(response.status === 403) {
@@ -99,7 +99,7 @@ const markUnavailable = (className) => {
 
 class NullUserObject {
     constructor() {
-        this.avatar_url = "https://avatars.githubusercontent.com/u/583231?v=4"
+        this.avatar_url = "https://avatars.githubusercontent.com/u/18667658?v=4"
         this.name = "The Octocat"
         this.login = "octocat"
         this.created_at = "Joined"
